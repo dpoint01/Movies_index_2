@@ -1,0 +1,14 @@
+.container
+  .pure-g-r
+    .pure-u-1-1
+      %h1.name-centered= @actor_roles[0]["name"]
+      %table.pure-table.table-centered
+        %thead
+          %tr
+            %th Title
+            %th Role
+        %tbody 
+        - @actor_roles.each do |movie|
+          %tr
+            %td= movie["title"]
+            %td= movie["character"]

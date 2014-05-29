@@ -1,0 +1,16 @@
+.container
+  .pure-g-r
+    .pure-u-1-1
+      %h1.name-centered= @movie_info[0]["title"]
+      %h3.name-centered= @movie_info[0]["studio"]
+      %h3.name-centered= @movie_info[0]["genre"]
+      %table.pure-table.table-centered
+        %thead
+          %tr
+            %th Actor Name
+            %th Role
+        %tbody 
+        - @movie_info.each do |movie|
+          %tr
+            %td= "<a href='/actors/#{movie['actor_id']}'>#{movie['actor']}</a>"
+            %td= movie["character"]

@@ -1,0 +1,44 @@
+.container
+  .pure-g-r
+    .pure-u-1-1
+      .buttons-centered
+
+        %form{:action => "/movies", :method => "get"}
+          %label{:for => "query"}
+          %input{:type => "text", :name => "query", :id => "query"}
+          %input{:type => "submit", :value => "Search"}
+        %form
+        / .buttons2_centered
+        %a{:href => "/movies/best_movies"}
+          %button.button-success.pure-button Best Movies
+        %a{:href => "/movies/worst_movies"}
+          %button.button-error.pure-button Worst Movies
+        %a{:href => "/movies/newbies"}
+          %button.button-secondary.pure-button Newbies
+        %a{:href => "/movies/oldies"}
+          %button.button-warning.pure-button Oldies
+
+      %table.pure-table.table-centered
+        %thead
+          %tr
+            %th Title
+            %th Year
+            %th Rating
+            %th Genre
+            %th Studio
+        %tbody
+        - @all_movies.each do |movie|
+          %tr
+            %td= "<a href='/movies/#{movie['id']}'>#{movie['title']}</a>"
+            %td= movie["year"]
+            %td= movie["rating"]
+            %td= movie["genre"]
+            %td= movie["studio"]
+
+      - if !@search_movie
+        %ul.pure-paginator.centered_pagination
+          - if @page != 1
+            %li= "<a class='pure-button' href='/movies?page=#{@page - 1}'>&#171; Previous Page</a>"
+          %li= "<a class='pure-button' href='/movies?page=#{@page + 1}'>Next Page &#187;</a>"
+        %p.centered_pagination= @page
+

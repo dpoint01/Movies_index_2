@@ -1,0 +1,102 @@
+body{
+  padding-bottom: 50px;
+}
+
+
+a {
+  text-decoration: none;
+}
+.container {
+
+  margin-top:100px;
+}
+.container h2 {
+  text-align: center;
+}
+
+.center-container {
+  position: relative;
+}
+
+.absolute-center {
+  width: 50%;
+  height: 50%;
+  overflow: auto;
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+}
+.absolute-center .is-fixed {
+  position:fixed;
+  z-index:999;
+}
+.absolute-center h2 {
+  text-align: center;
+}
+.pure-table tbody tr:nth-child(odd){
+  background: #f2f2f2;
+}
+.pure-table thead tr {
+  font-weight: bold;
+}
+.centered-table {
+  margin:0 auto;
+}
+ul.wins-losses {
+  text-align: center;
+}
+ul.wins-losses li {
+  display:inline;
+}
+ul.wins-losses li+li {
+  padding:50px;
+}
+.table-centered {
+  margin:0 auto;
+}
+.name-centered {
+  text-align: center;
+}
+.centered_pagination {
+  margin-top:30px;
+  text-align: center;
+}
+.buttons-centered {
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom:30px;
+}
+.buttons-centered form {
+  margin-bottom: 30px; 
+}
+.button-success,
+.button-error,
+.button-warning,
+.button-secondary {
+  color: white;
+  border-radius: 4px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.button-success {
+  background: rgb(28, 184, 65); /* this is a green */
+}
+
+.button-error {
+  background: rgb(202, 60, 60); /* this is a maroon */
+}
+
+.button-warning {
+  background: rgb(223, 117, 20); /* this is an orange */
+}
+
+.button-secondary {
+  background: rgb(66, 184, 221); /* this is a light blue */
+}
+
+.buttons2-centered{
+  margin-top: 30px;
+ 
+  margin-bottom: 30px;
+}
+

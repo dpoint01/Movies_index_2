@@ -1,0 +1,25 @@
+.container
+  .pure-g-r
+    .pure-u-1-3
+    .pure-u-1-3
+      .buttons-centered
+        %form{:action => "/actors", :method => "get"}
+          %label{:for => "query"}
+          %input{:type => "text", :name => "query", :id => "query"}
+          %input{:type => "submit", :value => "Search"}
+        %form
+      %table.pure-table.table-centered
+        %thead
+          %tr
+            %td Name
+        %tbody
+        - @all_actors.each do |actor|
+          %tr
+            %td= "<a href='/actors/#{actor['id']}'>#{actor['name']}</a>"
+      - if !@search_actor
+        %ul.pure-paginator.centered_pagination
+          - if @page != 1
+            %li= "<a class='pure-button' href='/actors?page=#{@page - 1}'>&#171; Previous Page</a>"
+          %li= "<a class='pure-button' href='/actors?page=#{@page + 1}'>Next Page &#187;</a>"
+        %p.centered_pagination= @page
+    .pure-u-1-3
