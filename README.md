@@ -11,3 +11,5 @@ and Sinatra.
 
 I also implemented this second version using haml files instead of erb files. It took sometime to get used to
 but it cuts down syntax dramatically!
+
+Movies_index deployed onto heroku here: http://movies-index2.herokuapp.com/movies
